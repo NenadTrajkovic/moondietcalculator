@@ -1,0 +1,16 @@
+
+.wrapper {
+  max-width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 58% 30% 18%;
+  grid-template-rows: 6rem 35rem 25rem 5rem 55rem;
+  border: .3rem solid #c6e746;
+}
+
+@media only screen and (min-width: 280px) {
+  .wrapper {
+    grid-template-columns: 54% 44% 12%;
+    grid-template-rows: 3rem 15rem 15rem 2rem 40rem;
+  }
+}
