@@ -1,0 +1,128 @@
+
+.forest {
+  width: 100%;
+  grid-column: 1 / 5;
+  grid-row: 3 / 5;
+  position: relative;
+  z-index: 4;
+}
+
+@media only screen and (min-width: 2201px) {
+  .forest {
+    top: 0;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .forest {
+    top: 2rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .forest {
+    top: 4rem;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .forest {
+    top: 3rem;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .forest {
+    top: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .forest {
+    top: 2rem;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .forest {
+    top: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .forest {
+    top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  .forest {
+    top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .forest {
+    top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .forest {
+    top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .forest {
+    top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .forest {
+    top: 1rem;
+  }
+}
+
+// @media only screen and (max-width: 360px) {
+//   .forest {
+//     top: 5.4rem;
+//   }
+// }
+
+// @media only screen and (max-width: 350px) {
+//   .forest {
+//     top: 5.1rem;
+//   }
+// }
+
+// @media only screen and (max-width: 340px) {
+//   .forest {
+//     top: 4.8rem;
+//   }
+// }
+
+// @media only screen and (max-width: 330px) {
+//   .forest {
+//     top: 4.5rem;
+//   }
+// }
+
+// @media only screen and (max-width: 320px) {
+//   .forest {
+//     top: 4.2rem;
+//   }
+// }
+
+// @media only screen and (max-width: 310px) {
+//   .forest {
+//     top: 4rem;
+//   }
+// }
+
+// @media only screen and (max-width: 300px) {
+//   .forest {
+//     top: 3.7rem;
+//   }
+// }

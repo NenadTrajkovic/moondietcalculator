@@ -9,10 +9,13 @@ export default class MoonDiet extends Document {
   render() {
     return (
       <Html lang="en">
-      <Head />
+      <Head>
+        
+      </Head>
       <body>
         <Main />
-        <NextScript />
+        <NextScript /> 
+          <script type="text/javascript" src="/static/animations/particles.js"></script>
       </body>
       </Html>
     )
