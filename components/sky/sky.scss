@@ -1,7 +1,10 @@
 
+@import "../../scss/variables";
+
 .sky {
   grid-column: 1 / 5;
   grid-row: 1 / 5;
+  position: relative;
   background-origin: border-box;
   background-repeat: no-repeat;
   &__image {
@@ -11,6 +14,69 @@
     top: 5rem;
     z-index: 2;
     opacity: .7;
+  }
+  &__current-data {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    text-align: center;
+    z-index: 5;
+    &--location {
+      font-size: .8rem!important;
+      color: $color-text!important;
+      margin: .5rem 0 0 0!important;
+      padding: 0!important;
+      font-weight: 100!important;
+      strong {
+        font-size: 1rem!important;
+        font-weight: 600!important;
+      }
+    }
+    &--meeus {
+      font-size: 1.4rem!important;
+      color: $color-text!important;
+      margin: .5rem 0 0 0!important;
+      padding: 0!important;
+      font-weight: 600!important;
+    }
+    &--rise-set {
+      display: block;
+      width: 100%;
+      height: auto;
+      .rise {
+        width: 50%;
+        height: auto;
+        float: left;
+      }
+      .set {
+        width: 50%;
+        height: auto;
+        float: left;
+      }
+    }
+    h1, h2, h3 {
+      font-size: 3.6rem;
+      font-weight: bold;
+      font-family: $MainFont;
+      letter-spacing: .7rem;
+      margin: 1.2rem 0 5rem 0;
+      color: $color-text;
+    }
+    em {
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: $MainFont;
+      letter-spacing: .3rem;
+      color: $color-text;
+    }
+    p {
+      font-size: 2rem;
+      letter-spacing: .4rem;
+      font-weight: 900;
+      font-family: $MainFont;
+      margin: 1rem 0 2rem 0;
+      color: $color-text;
+    }
   }
 }
 

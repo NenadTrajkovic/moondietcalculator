@@ -1,11 +1,25 @@
 
 import "./sky.scss";
 import { Picture } from "react-responsive-picture";
+import CurrentMoonData from "./currentMoonData";
 
 class Sky extends React.Component {
+  constructor(props){
+    super(props);
+  }
   render() {
     return (
       <div className="sky">
+
+        <CurrentMoonData  city={this.props.city}
+                          lat={this.props.lat}
+                          lon={this.props.lon}
+                          timeZone={this.props.timeZone}
+                          moonRise={this.props.moonRise}
+                          moonSet={this.props.moonSet}
+                          moonPhase={this.props.moonPhase}
+        />
+        
           <Picture
             className={
               "sky__image"

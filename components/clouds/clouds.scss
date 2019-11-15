@@ -19,15 +19,22 @@
   }
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1500px) {
   .clouds {
     grid-row: 3 / 6;
+    top: 6rem;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .clouds {
+    top: 5rem;
   }
 }
 
 @media only screen and (max-width: 999px) {
   .clouds {
-    top: 0;
+    top: 3rem;
     grid-row: 1 / 6;
   }
 }

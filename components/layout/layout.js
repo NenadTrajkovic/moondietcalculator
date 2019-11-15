@@ -1,5 +1,4 @@
 
-import Link from "next/link";
 import "./layout.scss";
 
 const Layout = (props) => {

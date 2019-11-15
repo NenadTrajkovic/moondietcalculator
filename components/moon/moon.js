@@ -2,14 +2,12 @@
 import "./moon.scss";
 import Phase from "./phase";
 
-class Moon extends React.Component {
-  render() {
-    return (
-      <div className="moon">
-        <Phase />
-      </div>
-    )
-  }
+const Moon = (props) => {
+  return (
+    <div className="moon">
+      <Phase moonPhase={props.moonPhase} />
+    </div>
+  )
 };
 
 export default Moon;
