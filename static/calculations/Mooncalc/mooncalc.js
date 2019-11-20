@@ -58,31 +58,31 @@ Sources of the algorithm : http://www.abecedarical.com/zenosamples/zs_lunarphase
     age = ip * 29.53;
 
     if (age <  1.84566) {
-      phase = 'NEW';
+      phase = 'New Moon';
       trajectory = 'ascendent';
     } else if (age <  5.53699) {
-      phase = 'Waxing crescent';
+      phase = 'Waxing Crescent';
       trajectory = 'ascendent';
     } else if (age <  9.22831) {
-      phase = 'First quarter';
+      phase = 'First Quarter';
       trajectory = 'ascendent';
     } else if (age < 12.91963) {
-      phase = 'Waxing gibbous';
+      phase = 'Waxing Gibbous';
       trajectory = 'ascendent';
     } else if (age < 16.61096) {
-      phase = 'FULL';
+      phase = 'Full Moon';
       trajectory = 'descendent';
     } else if (age < 20.30228) {
-      phase = 'Waning gibbous';
+      phase = 'Waning Gibbous';
       trajectory = 'descendent';
     } else if (age < 23.99361) {
-      phase = 'Last quarter';
+      phase = 'Third Quarter';
       trajectory = 'descendent';
     } else if (age < 27.68493) {
-      phase = 'Waning crescent';
+      phase = 'Waning Crescent';
       trajectory = 'descendent';
     } else {
-      phase = 'NEW';
+      phase = 'New Moon';
       trajectory = 'ascendent';
     }
 

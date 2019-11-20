@@ -13,6 +13,18 @@ import Forest from "../components/forest/forest";
 import Moon from "../components/moon/moon";
 import Orbs from "../components/orbs/orbs";
 
+/////////////////////////////////////////////////////////////
+const date = new Date();
+/////////////////////////////////////////////////////////////
+
+const MoonCalc = require("mooncalc");
+const MoonDatas = MoonCalc.datasForDay(date);
+/////////////////////////////////////////////////////////////
+// Moon currently in Zodiac, trajectory, age, (maybe phase!?)
+
+
+/////////////////////////////////////////////////////////////
+
 const App = (props) => {
   return (
     <>
@@ -42,12 +54,13 @@ const App = (props) => {
         <Sky  city={props.userData.city}
               lat={props.userData.latitude}
               lon={props.userData.longitude}
-              timeZone={props.userData.utc_offset}
-              moonRise={props.moonAndSunApi.moonRise}
-              moonSet={props.moonAndSunApi.moonSet}
-              moonPhase={props.moonAndSunApi.moonPhase}
+              timeZone={props.userData.utc_offset} 
+              moonPhase={props.moonPhase}
+              moonApi={props.moonApi}
+              
         />
-        <Moon moonPhase={props.moonAndSunApi.moonPhase}
+        <Moon moonPhase={props.moonPhase}
+              moonApi={props.moonApi}
         />
         <Clouds />
         <Forest />
@@ -92,12 +105,18 @@ App.getInitialProps = async function() {
 
   let lat = LocationData.latitude.toFixed(2);
   let lon = LocationData.longitude.toFixed(2);
+  let ip = LocationData.ip.toString();
 
 // MOON AND SUN DATA FOR CURRENT USER POSITION
 //                                                                      Lat   Lon   Date     Time zone  
 // MoonAPI                            "https://api.solunar.org/solunar/44.81,20.46,20190228,+1"; (+01)
-  let soLunarApi = await fetch(`https://api.solunar.org/solunar/${lat},${lon},${formatedDate},${formatedTimeZone}`);
-  let soLunarApiData = await soLunarApi.json();
+  // let soLunarApi = await fetch(`https://api.solunar.org/solunar/${lat},${lon},${formatedDate},${formatedTimeZone}`);
+  // let soLunarApiData = await soLunarApi.json();
+
+  //                                                                    Key                          | ip adress               Lang
+  // Moon API II      https://api.ipgeolocation.io/astronomy?apiKey=2359f875110e41c99179dba8e7fa8bf4 & 178.220.243.21=1.1.1.1&lang=en
+  let IPGeolocation = await fetch(`https://api.ipgeolocation.io/astronomy?apiKey=2359f875110e41c99179dba8e7fa8bf4&${ip}=1.1.1.1&lang=en`);
+  let GeoData = await IPGeolocation.json();
 
 // WEATHER FOR CURRENT LOCATION
 //                                                 API secret key                Lat     Lon
@@ -105,16 +124,20 @@ App.getInitialProps = async function() {
   let weatherApi = await fetch(`https://api.darksky.net/forecast/4bed243081b1cce4f0d65b6ca0cdb834/${lat},${lon}`);
   let weatherApiData = await weatherApi.json(); 
   
-  console.log(`Server-side test: ${soLunarApiData.moonRise}`);
+  console.log(`Server-side test: ${LocationData.ip}`);
 
   return {
   // User Location data. ENDPOINTS: city, region, country_name, continent_code, latitude, longitude, utc_offset, org, asn, ip
     userData: LocationData,
   // Moon and Sun current data for user location. ENDPOINTS: moonRise, moonSet, moonTransit, moonPhase, sunRise, sunSet, sunTransit
-    moonAndSunApi: soLunarApiData,
+    // moonAndSunApi: soLunarApiData,
   // Weather for current user position. ENDPOINTS: latitude, longitude, timezone, currently.summary, currently.icon, currently.humidity, currently.temperature (F),
   // currently.pressure, currently.windSpeed, currently.uvIndex, currently.visibility, currently.ozone, hourly.summary, hourly.icon 
-    weatherData: weatherApiData
+    weatherData: weatherApiData,
+
+    moonApi: GeoData,
+
+    moonPhase: MoonDatas
   
   };
 

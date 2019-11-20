@@ -21,37 +21,51 @@
     left: 15%;
     text-align: center;
     z-index: 5;
-    &--location {
-      font-size: .8rem!important;
-      color: $color-text!important;
-      margin: .5rem 0 0 0!important;
-      padding: 0!important;
-      font-weight: 100!important;
+    span .location {
+      font-size: .8rem;
+      color: $color-text;
+      margin: .5rem 0 0 0;
+      padding: 0;
+      font-weight: 100;
       strong {
-        font-size: 1rem!important;
-        font-weight: 600!important;
+        font-size: 1rem;
+        font-weight: 600;
       }
     }
-    &--meeus {
-      font-size: 1.4rem!important;
-      color: $color-text!important;
-      margin: .5rem 0 0 0!important;
-      padding: 0!important;
-      font-weight: 600!important;
-    }
     &--rise-set {
-      display: block;
       width: 100%;
       height: auto;
       .rise {
-        width: 50%;
+        width: 33.3%;
+        height: auto;
+        float: left;
+      }
+      .age {
+        width: 33.3%;
         height: auto;
         float: left;
       }
       .set {
-        width: 50%;
+        width: 33.3%;
         height: auto;
         float: left;
+      }
+    }
+    &--diet {
+      width: 100%;
+      height: auto;
+      .diet {
+        width: 100%;
+        &__prev {
+          p {
+            font-size: 1.5rem;
+          }
+        }
+        &__next {
+          p {
+            font-size: 1.5rem;
+          }
+        }
       }
     }
     h1, h2, h3 {
@@ -59,7 +73,7 @@
       font-weight: bold;
       font-family: $MainFont;
       letter-spacing: .7rem;
-      margin: 1.2rem 0 5rem 0;
+      margin: 1.2rem 0 3rem 0;
       color: $color-text;
     }
     em {

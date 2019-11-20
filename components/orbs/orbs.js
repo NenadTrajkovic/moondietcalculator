@@ -11,7 +11,7 @@ class Orbs extends React.Component {
           lon = this.props.lon;
 
     particlesJS.load("particles-js", "../../static/animations/particlesjs_small.json", function(){
-      console.log("Particles.js da li radi?")
+      console.log("Particles.js test / OK!")
     });
 
     
