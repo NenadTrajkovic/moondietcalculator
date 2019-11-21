@@ -1,5 +1,6 @@
-import Diet from "./moonDietPhases";
 
+import Diet from "./moonDietPhases";
+import moment from "moment";
 
 class CurrentMoonData extends React.Component {
   constructor(props){
@@ -10,7 +11,8 @@ class CurrentMoonData extends React.Component {
       lon: props.lon,
       tZone: props.timeZone,
       phase: props.moonPhase,
-      moonApi: props.moonApi
+      moonApi: props.moonApi,
+      date: props.dateTime
     }
   }
   // distance() {
@@ -31,16 +33,31 @@ class CurrentMoonData extends React.Component {
   //     illum: k 
   //   });
   // }
+  time() {
+    this.setState({
+      date: moment().format("ddd MMM Do YYYY H:mm:ss")
+    });
+  }
+  componentDidMount() {
+    this.timer = setInterval(
+      () => this.time(),
+      1000
+    );
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
   render() {
     const phase = this.state.phase.phase.toString();
     return (
       <div className="sky__current-data">
 
-          <span>
+          <div className="sky__current-data--location">
             <em>Current Phase for</em>
-            <p className="location"><strong>{`${this.state.city}`}</strong>{` lat: ${this.state.lat} lon: ${this.state.lon} ${this.state.tZone}`}</p>
+            <p><strong>{`${this.state.city}`}</strong>{` lat:${this.state.lat}  lon:${this.state.lon}`}</p>
+            <p>{this.state.date}</p>
             <h1>{phase}</h1>
-          </span>
+          </div>
 
           <div className="sky__current-data--rise-set">
             <div className="rise">

@@ -5,6 +5,8 @@ import fetch from "isomorphic-unfetch";
 
 import "../scss/style.scss";
 
+import moment from "moment";
+
 import Layout from "../components/layout/layout";
 import Sky from "../components/sky/sky";
 import Stars from "../components/stars/stars";
@@ -57,6 +59,7 @@ const App = (props) => {
               timeZone={props.userData.utc_offset} 
               moonPhase={props.moonPhase}
               moonApi={props.moonApi}
+              dateTime={props.dateTime}
               
         />
         <Moon moonPhase={props.moonPhase}
@@ -137,7 +140,9 @@ App.getInitialProps = async function() {
 
     moonApi: GeoData,
 
-    moonPhase: MoonDatas
+    moonPhase: MoonDatas,
+
+    dateTime: moment().format("ddd MMM Do YYYY H:mm:ss")
   
   };
 

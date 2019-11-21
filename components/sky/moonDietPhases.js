@@ -1,7 +1,7 @@
 
 const lune = require("lune");
 
-// Previus Moon Diet
+/////////////////   Previus Moon Diet  //////////////////
 const currentDate = new Date();
 const prevWeek = currentDate.getUTCDate() - 8;
 const monthPrevNext = currentDate.getUTCMonth();
@@ -34,10 +34,11 @@ const prev_phase_last = lune.phase_range(
     lune.PHASE_LAST
 );
 
-// Current Moon Phase
+///////////  Current Moon Phase  ///////////////////
 const current_moon_data = lune.phase(); // age, illuminated, distance, phase (in number value)
+////////////////////////////////////////////////////
 
-// Next Moon Diet
+//////////   Next Moon Diet  ///////////////////////
 const nextWeek = currentDate.getUTCDate() + 9;
 
 const next = new Date(year, monthPrevNext, nextWeek);
@@ -94,7 +95,7 @@ class Diet extends React.Component {
         {this.state.prevPhases.length !== 0 ? <>
           <div className="diet__prev">
             <em>Prev diet</em>
-            <p>{this.state.prevPhases.toString().substring(1, 26)}</p>
+            <p>{this.state.prevPhases.toString().substring(2, 26)}</p>
           </div>
           <div className="diet__next">
             <em>Next diet</em>

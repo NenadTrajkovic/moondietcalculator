@@ -17,6 +17,7 @@ class Sky extends React.Component {
                           timeZone={this.props.timeZone}
                           moonPhase={this.props.moonPhase}
                           moonApi={this.props.moonApi}
+                          dateTime={this.props.dateTime}
                     
         />
         
