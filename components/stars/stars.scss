@@ -1,0 +1,26 @@
+
+
+@import "../../scss/animations.scss";
+@import "../../scss/variables";
+
+.stars,
+.twinkling {
+  position: relative;
+  grid-column: 1 / 5;
+  grid-row: 1 / 4;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+}
+.stars {
+  background: $color-dark url("../../static/images/stars/stars_300.png") repeat top center;
+  position: relative;
+  z-index: 1;
+}
+.twinkling {
+  background: transparent url("../../static/images/stars/twinkling.png") repeat top center;
+  position: relative;
+  z-index: 2;
+}
+
+// @media only screen and (max-width: 300px) {
+// }

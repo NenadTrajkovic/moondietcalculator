@@ -14,10 +14,17 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "autoprefixer": "^9.7.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "lune": "^0.4.0",
+    "moment": "^2.24.0",
+    "mooncalc": "^1.0.7",
     "next": "^9.1.2",
+    "next-compose": "0.0.2",
+    "next-images": "^1.2.0",
     "node-sass": "^4.13.0",
     "postcss": "^7.0.21",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react-dom": "^16.11.0",
+    "react-responsive-picture": "^3.2.2"
   }
 }
